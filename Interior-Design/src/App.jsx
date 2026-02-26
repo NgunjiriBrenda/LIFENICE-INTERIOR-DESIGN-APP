@@ -1,8 +1,19 @@
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import Landing from "./pages/Landing";
+import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
+import Cart from "./pages/Cart";
+
 function App(){
   return (
-    <div className="bg-blue-300 text-white text-center p-10">
-      <h1 className="text-4xl font-bold ">Welcome to LifeNice Interior Design and Sanitary</h1>    
-    </div>
+    <BrowserRouter>
+       <Routes>
+          <Route path="/" element={<Landing/>} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </BrowserRouter>
   )
 }
 
